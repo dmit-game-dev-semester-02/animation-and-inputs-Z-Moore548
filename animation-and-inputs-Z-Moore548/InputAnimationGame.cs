@@ -39,7 +39,7 @@ public class InputAnimationGame : Game
         _background = Content.Load<Texture2D>("MountainBackground");
         _cottage = Content.Load<Texture2D>("Cottage");
         Texture2D spriteSheet01 = Content.Load<Texture2D>("Sun SpriteSheet");
-        _sun = new CelAnimationSequence(spriteSheet01, 106, 1 / 5f);
+        _sun = new CelAnimationSequence(spriteSheet01, 112, 1 / 5f);
         _animation01 = new CelAnimationPlayer();
         _animation01.Play(_sun);
         Texture2D spriteSheet02 = Content.Load<Texture2D>("LittleGuySpriteSheet");
