@@ -24,3 +24,7 @@ C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animatio
 C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\obj\Debug\net8.0\assignment01_animation_and_input.pdb
 C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\obj\Debug\net8.0\assignment01_animation_and_input.genruntimeconfig.cache
 C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\obj\Debug\net8.0\ref\assignment01_animation_and_input.dll
+C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\bin\Debug\net8.0\Content\Cottage.xnb
+C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\bin\Debug\net8.0\Content\MountainBackground.xnb
+C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\bin\Debug\net8.0\Content\Sun SpriteSheet.xnb
+C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\bin\Debug\net8.0\Content\LittleGuySpriteSheet.xnb

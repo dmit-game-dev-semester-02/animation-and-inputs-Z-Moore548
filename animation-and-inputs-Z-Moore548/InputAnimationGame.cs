@@ -9,6 +9,9 @@ public class InputAnimationGame : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
+    private const int _WindowWidth = 626;
+    private const int _WindowHeight = 380;
+
     private Texture2D _background, _cottage;
     private CelAnimationSequence _littleGuy, _sun;
 
@@ -23,7 +26,9 @@ public class InputAnimationGame : Game
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
+        _graphics.PreferredBackBufferWidth = _WindowWidth;
+        _graphics.PreferredBackBufferHeight = _WindowHeight;
+        _graphics.ApplyChanges();
 
         base.Initialize();
     }
@@ -31,16 +36,23 @@ public class InputAnimationGame : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-
-        // TODO: use this.Content to load your game content here
+        _background = Content.Load<Texture2D>("MountainBackground");
+        _cottage = Content.Load<Texture2D>("Cottage");
+        Texture2D spriteSheet01 = Content.Load<Texture2D>("Sun SpriteSheet");
+        _sun = new CelAnimationSequence(spriteSheet01, 106, 1 / 5f);
+        _animation01 = new CelAnimationPlayer();
+        _animation01.Play(_sun);
+        Texture2D spriteSheet02 = Content.Load<Texture2D>("LittleGuySpriteSheet");
+        _littleGuy = new CelAnimationSequence(spriteSheet02, 112, 1 / 5f);
+        _animation02 = new CelAnimationPlayer();
+        _animation02.Play(_littleGuy);
+        
     }
 
     protected override void Update(GameTime gameTime)
     {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            Exit();
-
-        // TODO: Add your update logic here
+        _animation01.Update(gameTime);
+        _animation02.Update(gameTime);
 
         base.Update(gameTime);
     }
@@ -49,7 +61,12 @@ public class InputAnimationGame : Game
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        // TODO: Add your drawing code here
+        _spriteBatch.Begin();
+        _spriteBatch.Draw(_background, Vector2.Zero, Color.White);
+        _spriteBatch.Draw(_cottage, new Vector2(300f, 50f), Color.White);
+        _animation01.Draw(_spriteBatch, new Vector2(250f, 0), SpriteEffects.None);
+        _animation02.Draw(_spriteBatch, new Vector2(60f, 210f), SpriteEffects.None);
+        _spriteBatch.End();
 
         base.Draw(gameTime);
     }
