@@ -5,11 +5,13 @@
   <Config />
   <SourceFiles>
     <File>C:/GitHub/2025-Jan-DMIT1514-Assignments/animation-and-inputs-Z-Moore548/animation-and-inputs-Z-Moore548/Content/Cottage.png</File>
-    <File>C:/GitHub/2025-Jan-DMIT1514-Assignments/animation-and-inputs-Z-Moore548/animation-and-inputs-Z-Moore548/Content/LittleGuySpriteSheet.png</File>
+    <File>C:/GitHub/2025-Jan-DMIT1514-Assignments/animation-and-inputs-Z-Moore548/animation-and-inputs-Z-Moore548/Content/GuyMovingSprite.png</File>
+    <File>C:/GitHub/2025-Jan-DMIT1514-Assignments/animation-and-inputs-Z-Moore548/animation-and-inputs-Z-Moore548/Content/LittleGuyIdleSpriteSheet.png</File>
     <File>C:/GitHub/2025-Jan-DMIT1514-Assignments/animation-and-inputs-Z-Moore548/animation-and-inputs-Z-Moore548/Content/MountainBackground.png</File>
     <File>C:/GitHub/2025-Jan-DMIT1514-Assignments/animation-and-inputs-Z-Moore548/animation-and-inputs-Z-Moore548/Content/Sun SpriteSheet.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

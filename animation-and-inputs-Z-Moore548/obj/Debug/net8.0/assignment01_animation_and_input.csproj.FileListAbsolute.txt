@@ -27,4 +27,5 @@ C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animatio
 C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\bin\Debug\net8.0\Content\Cottage.xnb
 C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\bin\Debug\net8.0\Content\MountainBackground.xnb
 C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\bin\Debug\net8.0\Content\Sun SpriteSheet.xnb
-C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\bin\Debug\net8.0\Content\LittleGuySpriteSheet.xnb
+C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\bin\Debug\net8.0\Content\LittleGuyIdleSpriteSheet.xnb
+C:\GitHub\2025-Jan-DMIT1514-Assignments\animation-and-inputs-Z-Moore548\animation-and-inputs-Z-Moore548\bin\Debug\net8.0\Content\GuyMovingSprite.xnb
