@@ -13,12 +13,16 @@ public class InputAnimationGame : Game
     private const int _WindowHeight = 380;
 
     private Texture2D _background, _cottage;
-    private CelAnimationSequence _littleGuy, _sun, _guySpin;
+    private CelAnimationSequence _sun, _guySpin;
 
-    private CelAnimationPlayer _animationSun, _animationGuy, _animationGuySpin;
+    private CelAnimationPlayer _animationSun, _animationGuySpin;
+
+    private CelAnimationSequenceMultiRow _littleGuyD, _littleGuyU, _littleGuyL, _littleGuyR;
+    private CelAnimationPlayerMultiRow _animationGuyD, _animationGuyU, _animationGuyL, _animationGuyR;
     private KeyboardState _kbPreviousState;
     private float _x = 60, _y = 210;
     private bool _isMoving;
+    private int _direction;
 
     public InputAnimationGame()
     {
@@ -47,10 +51,25 @@ public class InputAnimationGame : Game
         _animationSun = new CelAnimationPlayer();
         _animationSun.Play(_sun);
 
-        Texture2D spriteSheetMoving = Content.Load<Texture2D>("GuyMovingSprite");
-        _littleGuy = new CelAnimationSequence(spriteSheetMoving, 112, 1 / 5f);
-        _animationGuy = new CelAnimationPlayer();
-        _animationGuy.Play(_littleGuy);
+        Texture2D spriteSheetMovingD = Content.Load<Texture2D>("LittleGuySpriteSheet");
+        _littleGuyD = new CelAnimationSequenceMultiRow(spriteSheetMovingD, 112, 96, 1 / 6f, 0);
+        _animationGuyD = new CelAnimationPlayerMultiRow();
+        _animationGuyD.Play(_littleGuyD);
+
+        Texture2D spriteSheetMovingU = Content.Load<Texture2D>("LittleGuySpriteSheet");
+        _littleGuyU = new CelAnimationSequenceMultiRow(spriteSheetMovingU, 112, 96, 1 / 6f, 1);
+        _animationGuyU = new CelAnimationPlayerMultiRow();
+        _animationGuyU.Play(_littleGuyU);
+
+        Texture2D spriteSheetMovingL = Content.Load<Texture2D>("LittleGuySpriteSheet");
+        _littleGuyL = new CelAnimationSequenceMultiRow(spriteSheetMovingL, 112, 96, 1 / 6f, 2);
+        _animationGuyL = new CelAnimationPlayerMultiRow();
+        _animationGuyL.Play(_littleGuyL);
+
+        Texture2D spriteSheetMovingR = Content.Load<Texture2D>("LittleGuySpriteSheet");
+        _littleGuyR = new CelAnimationSequenceMultiRow(spriteSheetMovingR, 112, 96, 1 / 6f, 3);
+        _animationGuyR = new CelAnimationPlayerMultiRow();
+        _animationGuyR.Play(_littleGuyR);
 
         Texture2D spriteSheet03 = Content.Load<Texture2D>("LittleGuyIdleSpriteSheet");
         _guySpin = new CelAnimationSequence(spriteSheet03, 112, 1 / 4f);
@@ -62,28 +81,36 @@ public class InputAnimationGame : Game
     protected override void Update(GameTime gameTime)
     {
         _animationSun.Update(gameTime);
-        _animationGuy.Update(gameTime);
+        _animationGuyD.Update(gameTime);
+        _animationGuyU.Update(gameTime);
+        _animationGuyL.Update(gameTime);
+        _animationGuyR.Update(gameTime);
         _animationGuySpin.Update(gameTime);
         KeyboardState kbCurrentState = Keyboard.GetState();
         if (kbCurrentState.IsKeyDown(Keys.Down))
         {
             _y++;
             _isMoving = true;
+            _direction = 0;
         }
         if (kbCurrentState.IsKeyDown(Keys.Up))
         {
             _y--;
             _isMoving = true;
+            _direction = 1;
+
         }
         if (kbCurrentState.IsKeyDown(Keys.Left))
         {
             _x--;
             _isMoving = true;
+            _direction = 2;
         }
         if (kbCurrentState.IsKeyDown(Keys.Right))
         {
             _x++;
             _isMoving  = true;
+            _direction = 3;
         }
         if (kbCurrentState.IsKeyUp(Keys.Down) && kbCurrentState.IsKeyUp(Keys.Up) && kbCurrentState.IsKeyUp(Keys.Left) && kbCurrentState.IsKeyUp(Keys.Right))
         {
@@ -107,9 +134,21 @@ public class InputAnimationGame : Game
        {
             _animationGuySpin.Draw(_spriteBatch, new Vector2(_x, _y), SpriteEffects.None);
        }
-       else 
+       else if (_direction == 0)
        {
-            _animationGuy.Draw(_spriteBatch, new Vector2(_x, _y), SpriteEffects.None);
+            _animationGuyD.Draw(_spriteBatch, new Vector2(_x, _y), SpriteEffects.None);
+       }
+       else if (_direction == 1)
+       {
+            _animationGuyU.Draw(_spriteBatch, new Vector2(_x, _y), SpriteEffects.None);
+       }
+       else if (_direction == 2)
+       {
+            _animationGuyL.Draw(_spriteBatch, new Vector2(_x, _y), SpriteEffects.None);
+       }
+       else if (_direction == 3)
+       {
+            _animationGuyR.Draw(_spriteBatch, new Vector2(_x, _y), SpriteEffects.None);
        }
         _spriteBatch.End();
 
